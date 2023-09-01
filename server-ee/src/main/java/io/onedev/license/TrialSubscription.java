@@ -8,19 +8,30 @@ import javax.validation.constraints.Min;
 public class TrialSubscription extends LicensePayload {
 
 	private static final long serialVersionUID = 1L;
-
-	private int days = 30;
+	
+	private String licenseGroup;
+	
+	private int trialDays = 30;
 
 	private boolean checkUUID;
 
-	@Editable(order=100)
-	@Min(1)
-	public int getDays() {
-		return days;
+	@Editable(order=50)
+	public String getLicenseGroup() {
+		return licenseGroup;
 	}
 
-	public void setDays(int days) {
-		this.days = days;
+	public void setLicenseGroup(String licenseGroup) {
+		this.licenseGroup = licenseGroup;
+	}
+
+	@Editable(order=100)
+	@Min(1)
+	public int getTrialDays() {
+		return trialDays;
+	}
+
+	public void setTrialDays(int trialDays) {
+		this.trialDays = trialDays;
 	}
 
 	public boolean isCheckUUID() {
